@@ -1,0 +1,29 @@
+ <!-- <h2 class="font-bold text-x1">My Day</h2>
+<div class="text-blue-600">
+  {{ DateNow | date:'fullDate'}} -->
+   <!-- <span>Sunday</span>,<span>Dec 21, 2023</span> -->
+<!-- </div>  -->
+<!-- <div class="flex">
+  <input type="text" class="w-full h-16 p-4 rounded shadow" placeholder="type your task">
+</div> -->
+<!-- <div class="flex mt-6">
+<input type="text" class="w-full h-16 px-4 py-2 rounded shadow" placeholder="type your task"
+[(ngModel)="newTask" (keydown.enter)="addTask()"/>
+</div> -->
+<!-- <app-page-title (search)="search($event as string)"></app-page-title> -->
+<app-page-title ></app-page-title>
+<div class="flex mt-6">
+    <input type="text" class="w-full h-16 px-4 py-2 rounded shadow" placeholder="type your task"
+           [(ngModel)]="newTask" (keydown.enter)="addTask()">
+  </div>
+<div class="flex flex-col mt-6">
+<!-- <h2 class="font-bold text-x1">Tasks</h2>
+ <p class="bg-white w-full h-16 px-4 py-2 rounded shadow flex items-center mt-2 mb-2">task1</p> -->
+
+<!-- @for(task of taskList;track task)
+{
+  <p class="bg-white w-full h-16 px-4 py-2 rounded shadow flex items-center mt-2 mb-2">{{task.title}}</p>
+
+} --> 
+<app-task-list [taskList]="taskList" (complete)="onComplete($event)" (important)="onImportant($event)"></app-task-list>
+</div> 
